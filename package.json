@@ -1,0 +1,81 @@
+{
+    "name": "mass-yiff",
+    "version": "1.0.0",
+    "description": "Download mass amounts of yiff from e621",
+    "main": "src/main/index.js",
+    "scripts": {
+        "test": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "dist-win-portable": "electron-builder --win portable",
+        "dist-linux-armv7l": "electron-builder --linux --armv7l",
+        "rebuild": "electron-rebuild",
+        "build-all": "electron-builder -mwl",
+        "postinstall": "electron-builder install-app-deps",
+        "publish": "electron-builder --publish always"
+    },
+    "author": {
+        "name": "oxmc",
+        "email": "oxmc7769@gmail.com"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^17.1.2",
+        "electron-builder": "^22.14.13",
+        "electron-rebuild": "^3.2.5"
+    },
+    "dependencies": {
+        "@electron/remote": "^2.0.7",
+        "axios": "^0.26.1",
+        "decompress": "^4.2.1",
+        "discord-rpc": "^4.0.1",
+        "edit-json-file": "^1.7.0",
+        "electron-window-state": "^5.0.3",
+        "fs": "^0.0.1-security",
+        "jszip": "^3.10.0",
+        "log4js": "^6.3.0",
+        "node-notifier": "^10.0.0",
+        "os": "^0.1.2",
+        "path": "^0.12.7",
+        "rimraf": "^3.0.2",
+        "v8-compile-cache": "^2.3.0"
+    },
+    "build": {
+        "appId": "com.oxmc.MassYiffDesktop",
+        "productName": "MassYiff Desktop",
+        "asarUnpack": [
+            "./node_modules/node-notifier/**/*"
+        ],
+        "extraResources": [
+            "./lib/**"
+        ],
+        "artifactName": "${productName}-${version}-${arch}.${ext}",
+        "mac": {
+            "icon": "build/app.icns",
+            "category": "Network"
+        },
+        "linux": {
+            "target": [
+                "appimage"
+            ],
+            "icon": "build/app.png",
+            "category": "Network"
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ],
+            "icon": "build/app.ico"
+        },
+        "protocols": [{
+            "name": "MassYiff",
+            "schemes": [
+                "MassYiff"
+            ]
+        }],
+        "portable": {
+            "unicode": false,
+            "artifactName": "MassYiff-Portable.exe"
+        }
+    }
+}

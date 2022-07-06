@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Download Mass Amounts of yiff</title>
+    <link rel="shortcut icon" href="https://e621.net/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'>
+    <link rel='stylesheet' href='https://memefileserver.ml/assets/css/style.css'>
+    <link rel='stylesheet' href='https://memefileserver.ml/assets/css/upload.css'>
+    <link rel='stylesheet' href='https://memefileserver.ml/assets/css/colored-icons.css'>
+    <link rel='stylesheet' href='https://memefileserver.ml/assets/css/progress-bar.css'>
+    <link rel='stylesheet' href='https://memefileserver.ml/assets/css/izitoast.min.css'>
+    <style>
+        div.a {
+            width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <center>
+            <h1>Mass download yiff from e621</h1>
+            <p>After your files have been downloaded, you can have them saved as a zip!</p>
+            <div class='formholder'>
+                <h1>Enter a tag to download:</h1>
+                <form id="yiff-download" enctype="multipart/form-data">
+                    <input name="tag" type="text" id="yiff-download-tag" placeholder="E621 Tag" />
+                    <input name="submit" type="submit" value="Download" />
+                </form>
+                <form id="yiff-download-cancel" style="display: none;">
+                    <input name="submit" type="submit" value="Cancel Download" style="background-color: red;">
+                </form>
+                <form id="yiff-download-folder">
+                    <input name="submit" type="submit" value="View Downloads" style="background-color: blue;">
+                </form>
+            </div>
+        </center>
+    </div>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        };
+    </script>
+    <script src="./js/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+    <script src="https://memefileserver.ml/assets/js/izitoast.min.js" type="application/javascript"></script>
+    <script src="./js/app.js" type="application/javascript"></script>
+</body>
+
+</html>
